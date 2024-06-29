@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LR 13-14</title>
+</head>
+
+<body>
+    <style>
+        a {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+        }
+
+        img {
+            border: 1px solid green;
+        }
+    </style>
+    <p>Супрунюк Никита Юрьевич</p>
+    <a>https://github.com/</a>
+    <img src="images/image.jpg" alt="#"
+        onmouseover="this.style.width = (this.naturalWidth * 2) + 'px'; this.style.height = (this.naturalHeight * 2) + 'px';"
+        onmouseout="this.style.width = (this.naturalWidth) + 'px'; this.style.height = (this.naturalHeight) + 'px';">
+    <script>
+        setTimeout(() => {
+            alert("Адрес предшествующей страницы: " + document.referrer)
+        }, 5000);
+    </script>
+    <script>
+        let width = screen.width;
+        let height = screen.height;
+        const html = `
+                <head><meta charset='UTF-8'><title>Screen size</title></head>
+                <body>
+                    <p>Width: ${width}px</p>
+                    <p>Height: ${height}px</p>
+                </body>`;
+        setTimeout(() => {
+            window.open('about:blank').document.documentElement.innerHTML = html;
+        }, 3000);
+    </script>
+    <style>
+        .feedback-form {
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgb(255, 180, 0);
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .feedback-form p {
+            margin: 0;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .feedback-form header {
+            padding: 10px 12px;
+            background-color: rgb(255, 180, 0);
+        }
+
+        .feedback-form header p {
+            font-size: 16px;
+            color: white;
+        }
+
+        .feedback-form main {
+            padding: 15px 10px 10px 10px;
+        }
+
+        .feedback-form table {
+            width: 100%;
+        }
+
+        .feedback-form input {
+            width: 100%;
+            height: 30px;
+            box-sizing: border-box;
+        }
+
+        .feedback-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .feedback-form-capture {
+            width: 100px;
+            height: 40px;
+            margin-right: 5px;
+        }
+
+        .feedback-form-btn {
+            display: inline;
+            border-radius: 5px;
+            border: 1px solid grey;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .feedback-form-btn:hover {
+            background-color: rgb(219, 219, 219);
+        }
+
+        .feedback-form-btn p {
+            display: inline-block;
+            position: relative;
+            top: -2px;
+            margin-bottom: 0;
+            font-weight: normal;
+            user-select: none;
+        }
+
+        .feedback-form-btn img {
+            width: 14px;
+            height: 14px;
+        }
+
+        .feedback-form input.feedback-form-send-btn {
+            display: block;
+            background-color: rgb(255, 180, 0);
+            color: white;
+            width: min-content;
+            border: none;
+            border-radius: 5px;
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        .error {
+                border: 2px solid red;
+            }
+
+        @media only screen and (max-width: 600px) {
+            .feedback-form {
+                padding: 5px;
+            }
+
+            .feedback-form p,
+            .feedback-form header p {
+                font-size: 10px;
+            }
+
+            .feedback-form header {
+                padding: 5px 6px;
+            }
+
+            .feedback-form main {
+                padding: 7px 5px 5px 5px;
+            }
+
+            .feedback-form table td {
+                padding: 0;
+            }
+
+            .feedback-form input,
+            .feedback-form textarea {
+                height: 20px;
+                font-size: 10px;
+            }
+
+            .feedback-form input,
+            .feedback-form textarea::placeholder {
+                font-size: clamp(1px, 1.8vw, 14px);
+            }
+
+            .feedback-form-btn {
+                padding: 2px;
+                height: 20px;
+                width: 60px;
+            }
+
+            .feedback-form-btn p {
+                font-size: 10px;
+            }
+
+            .feedback-form-btn img {
+                width: 10px;
+                height: 10px;
+            }
+
+            .feedback-form-capture {
+                width: 60px;
+                height: 20px;
+            }
+
+            .feedback-form input.feedback-form-send-btn {
+                height: 20px;
+                width: min-content;
+            }
+        }
+    </style>
+    <div class="feedback-form">
+        <header>
+            <P>Форма обратной связи</P>
+        </header>
+        <main>
+            <table>
+                <tr>
+                    <td style="padding-right: 10px;">
+                        <p>Введите ваше имя:</p>
+                    </td>
+                    <td style="padding-left: 10px;">
+                        <p>Введите вдрес email:</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-right: 10px;"><input id="name" type="text" placeholder="Например, Иван Иванович"></td>
+                    <td style="padding-left: 10px;"><input id="email" type="text" placeholder="Например, ivan@mail.ru"></td>
+                </tr>
+            </table>
+            <p style="margin-top: 15px; font-weight: bold;;">Введите сообщение:</p>
+            <textarea id="message" style="height: 50px;" type="text"
+                placeholder="Введите сообщение от 20 до 500 символов"></textarea>
+            <div style="display: flex; align-items: center; margin-top: 8px;">
+                <img class="feedback-form-capture" src="images/capture.png">
+                <div class="feedback-form-btn">
+                    <img src="images/refresh.png">
+                    <p>Обновить</p>
+                </div>
+            </div>
+            <p>Пожалуйста, введите указанный на изображении код:</p>
+            <input style="margin-bottom: 10px;">
+            <input id="code" class="feedback-form-send-btn" type="button" value="Отправить сообщение">
+        </main>
+    </div>
+    <script>
+        document.querySelector('.feedback-form-send-btn').addEventListener('click', validateForm);
+
+        function validateForm() {
+            const nameField = document.getElementById('name');
+            const emailField = document.getElementById('email');
+            const messageField = document.getElementById('message');
+            const codeField = document.getElementById('code');
+            let isValid = true;
+
+            // Clear previous error styles
+            nameField.classList.remove('error');
+            emailField.classList.remove('error');
+            messageField.classList.remove('error');
+            codeField.classList.remove('error');
+
+            // Validate Name
+            if (!nameField.value.trim()) {
+                nameField.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate Email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailField.value.trim())) {
+                emailField.classList.add('error');
+                isValid = false;
+            }
+
+            if (!messageField.value.trim() || messageField.value.length < 20 || messageField.value.length > 500) {
+                messageField.classList.add('error');
+                isValid = false;
+            }
+
+            if (!codeField.value.trim()) {
+                codeField.classList.add('error');
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Форма успешно отправлена!');
+            } else {
+                alert('Пожалуйста, заполните все поля правильно.');
+            }
+        }
+
+        document.querySelectorAll('.feedback-form input, .feedback-form textarea').forEach(element => {
+            element.addEventListener('focus', function () {
+                this.classList.remove('error');
+            });
+        });
+    </script>
+</body>
+
+</html>
