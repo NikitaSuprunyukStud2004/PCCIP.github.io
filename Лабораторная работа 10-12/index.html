@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LR 9</title>
+    <script>
+        function showDate() {
+            var currentDate = new Date();
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth();
+
+            var text = month + "-" + year;
+
+            var child = document.createElement("p");
+            child.textContent = text;
+
+            var dateDialog = document.getElementById("dateDialog");
+
+            if (dateDialog.childElementCount > 0) {
+                let child = dateDialog.firstChild;
+                dateDialog.removeChild(child);
+            }
+
+            dateDialog.appendChild(child);
+            dateDialog.setAttribute("open", "");
+        }
+
+        function onMouseLeave() {
+            var dateDialog = document.getElementById("dateDialog");
+
+            if (dateDialog.childElementCount > 0) {
+                let child = dateDialog.firstChild;
+                dateDialog.removeChild(child);
+            }
+
+            dateDialog.removeAttribute("open");
+        }
+    </script>
+</head>
+
+<body>
+    <dialog id="dateDialog"></dialog>
+    <button id="dataBtn" onclick="showDate()" onmouseleave="onMouseLeave(event)">
+        <p>Показать год</p>
+    </button>
+    <style>
+        .names {
+            width: max-content;
+            height: 100px;
+            margin: 10px 0px;
+            padding: 5px;
+            overflow-y: scroll;
+            border: 1px solid black;
+        }
+    </style>
+    <div id="names" class="names"></div>
+    <script>
+        var parent = document.getElementById("names");
+
+        const n = 20;
+        var i = 0;
+        do {
+            var child = document.createElement("p");
+            child.textContent = "Супрунюк Никита";
+            parent.appendChild(child);
+            i++;
+        } while (i < n + 5);
+    </script>
+    <style>
+        .title {
+            display: inline;
+        }
+    </style>
+    <div id="basicMass" style="margin-top: 1em;">
+        <h4 class="title">Исходный массив:</h1>
+    </div>
+    <div id="newMass">
+        <h4 class="title">Получившийся массив:</h1>
+    </div>
+    <div id="prodElems" style="margin-bottom: 1em;">
+        <h4 class="title">Произведение отрицательных элементов:</h1>
+    </div>
+    <script>
+        const createElement = (tag, value) => {
+            const element = document.createElement(tag);
+
+            if (tag === "p") {
+                element.textContent = value;
+            }
+
+            return element;
+        };
+
+        var result = 1;
+        var mass = [];
+        for (let i = 0; i < 10; i++) {
+            let value = Math.floor(Math.random() * (10 - -10) + -10);
+            mass[i] = value;
+            if (mass[i] < 0) {
+                result *= mass[i];
+            }
+        }
+
+        document.getElementById("basicMass").appendChild(createElement("p", mass.join(", ")));
+        var newMass = mass.reverse();
+        document.getElementById("newMass").appendChild(createElement("p", newMass.join(", ")));
+        document.getElementById("prodElems").appendChild(createElement("p", result));
+    </script>
+<p>y = √4 - x²</p>
+<input type="number" placeholder="Введите X" onchange="mathInputChange(event)">
+<p id="mathOutput"></p>
+<script src="./js/math.js"></script>
+<script src="./js/string.js"></script>
+<button onclick="changeStr()">
+    <p>Изменить строки</p>
+</button>
+</body>
+
+</html>
