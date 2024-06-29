@@ -1,0 +1,50 @@
+.header {
+    background-color: green;
+}
+
+.side-panel {
+    display: inline-block;
+    width: 15%;
+    background-color: green;
+}
+
+.main-panel {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+    background-color: green;
+}
+
+.block {
+    background-color: white;
+    margin: 2px;
+    height: 30vw;
+}
+
+.block-x2 {
+    background-color: white;
+    margin: 2px;
+    height: 60vw;
+}
+
+.footer {
+    background-color: green;
+}
+
+@media (max-width: 768px) {
+    .main-panel {
+        width: 80%;
+    }
+
+    .side-panel {
+        width: 20%;
+    }
+
+    .block {
+        height: 20vw;
+    }
+    
+    .block-x2 {
+        height: 40vw;
+    }
+}
