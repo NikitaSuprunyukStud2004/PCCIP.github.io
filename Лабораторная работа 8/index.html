@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <link rel="stylesheet" type="text/css" href="flower.css">
+    <title>LR 5-7</title>
+</head>
+
+<body>
+    <div class="header">1</div>
+    <div class="side-panel"  id="first-panel">
+        <div class="block">2</div>
+        <div class="block">3</div>
+        <div class="block">4</div>
+   </div><!--
+    --><div class="main-panel">
+        <div class="block">5</div>
+        <div class="block-x2">
+            <!--6 feedback-panel-->
+            <div class="feedback-form">
+                <header>
+                    <P>Форма обратной связи</P>
+                </header>
+                <main>
+                    <table>
+                        <tr>
+                            <td style="padding-right: 10px;"><p>Введите ваше имя:</p></td>
+                            <td style="padding-left: 10px;"><p>Введите вдрес email:</p></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 10px;"><input type="text" placeholder="Например, Иван Иванович"></td>
+                            <td style="padding-left: 10px;"><input type="text" placeholder="Например, ivan@mail.ru"></td>
+                        </tr>
+                    </table>
+                    <p style="margin-top: 15px; font-weight: bold;;">Введите сообщение:</p>
+                    <textarea style="height: 50px;" type="text" placeholder="Введите сообщение от 20 до 500 символов"></textarea>
+                    <div style="display: flex; align-items: center; margin-top: 8px;">
+                        <img class="feedback-form-capture" src="images/capture.png">
+                        <div class="feedback-form-btn">
+                            <img src="images/refresh.png">
+                            <p>Обновить</p>                           
+                        </div>
+                    </div>
+                    <p>Пожалуйста, введите указанный на изображении код:</p>
+                    <input style="margin-bottom: 10px;">
+                    <input class="feedback-form-send-btn" type="button" value="Отправить сообщение">
+                </main>
+            </div>
+        </div>
+    </div><!--
+    --><div  class="side-panel" id="second-panel">
+        <div class="block" style="box-sizing: border-box;">
+            <!--7 flower-->
+            <div class="flower-block">
+                <img src="images/flower.png">
+            </div>
+            <div class="flower-block">
+                <p class="flower-title">Весенний букет</p>
+            </div>
+        </div>
+        <div class="block">8</div>
+        <div class="block">9</div>
+    </div>
+    <div class="footer">10</div>
+</body>
+
+<script>
+    window.addEventListener('resize', function() {
+    var firstPanel = document.getElementById('first-panel');
+    var secondPanel = document.getElementById('second-panel');
+
+    if (window.matchMedia('(max-width: 768px)').matches) {
+        while (secondPanel.firstChild) {
+            firstPanel.appendChild(secondPanel.firstChild);
+        }
+    } else {
+        while (firstPanel.childNodes.length > 6) {
+            secondPanel.insertBefore(firstPanel.lastChild, secondPanel.firstChild);
+        }
+    }
+});
+</script>
+
+</html>

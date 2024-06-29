@@ -1,0 +1,19 @@
+.flower-block {
+    display: inline-block;;
+    width: calc(50% - 2px);
+    height: 100%;
+    vertical-align: top;
+}
+
+.flower-block img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.flower-title {
+    font-weight: bold;
+    font-size: clamp(6px, 0.78vw, 13.338px);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

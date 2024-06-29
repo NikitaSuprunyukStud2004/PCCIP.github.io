@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+}
+
+.header {
+    background-color: green;
+}
+
+.side-panel {
+    display: inline-block;
+    width: 15vw;
+    background-color: green;
+}
+
+.main-panel {
+    display: inline-block;
+    width: calc(70vw);
+    vertical-align: top;
+    background-color: green;
+}
+
+.block {
+    background-color: white;
+    margin: 2px;
+    height: 15vw;
+}
+
+.block-x2 {
+    background-image: url(images/background.jpg);
+    background-size: calc(100% - 2px) calc(100% - 2px);
+    box-sizing: border-box;
+    margin: 2px;
+    padding: 10px 30px;
+    height: min-content;
+}
+
+.footer {
+    background-color: green;
+}
+
+@media (max-width: 768px) {
+    .main-panel {
+        width: 80%;
+    }
+
+    .side-panel {
+        width: 20%;
+    }
+
+    .block {
+        height: 20vw;
+    }
+}
