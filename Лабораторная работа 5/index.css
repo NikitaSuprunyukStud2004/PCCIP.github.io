@@ -1,0 +1,35 @@
+body {
+    color: white;
+}
+
+.head-panel {
+    margin: 2px;
+    background-color: skyblue;
+}
+
+.side-panel {
+    display: inline-block;
+    width: 300px;
+    margin: 2px;
+    vertical-align: top;
+    background-color: skyblue;
+}
+
+.main-panel {
+    display: inline-block;
+    width: 600px;
+    margin: 2px;
+    vertical-align: top;
+    background-color: skyblue;
+}
+
+.block {
+    margin: 2px;
+    background-color: white;
+    color: black;
+}
+
+.footer-panel {
+    margin: 2px;
+    background-color: skyblue;
+}
