@@ -1,0 +1,9 @@
+/*Стили для body сайта*/
+body {
+    background-image: url("images/eat.jpg");
+    background-repeat: no-repeat;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11%;
+    color: blue;
+}
+
