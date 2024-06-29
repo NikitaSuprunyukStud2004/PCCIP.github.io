@@ -1,0 +1,41 @@
+body {
+    height: calc(100vh - 16px);
+    background-color: black;
+    color: white;
+}
+
+.head-panel {
+    height: 15%;
+    margin: 2px;
+    background-color: lightsalmon;
+}
+
+.side-panel {
+    width: calc(20% - 4px);
+    height: 70%;;
+    display: inline-block;
+    margin: 2px;
+    vertical-align: top;
+    background-color: lightsalmon;
+}
+
+.main-panel {
+    width: calc(60% - 4px);
+    height: 70%;
+    display: inline-block;
+    margin: 2px;
+    vertical-align: top;
+    background-color: lightsalmon;
+}
+
+.block {
+    height: calc(33% - 2px);
+    margin: 2px;
+    background-color: black;
+}
+
+.footer-panel {
+    height: 15%;
+    margin: 2px;
+    background-color: lightsalmon;
+}
